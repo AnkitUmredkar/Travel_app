@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TermConditionPage extends StatefulWidget {
-  const TermConditionPage({super.key});
+class Page3 extends StatefulWidget {
+  const Page3({super.key});
 
   @override
-  State<TermConditionPage> createState() => _TermConditionPageState();
+  State<Page3> createState() => _Page3State();
 }
 
-class _TermConditionPageState extends State<TermConditionPage> {
+class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -19,25 +19,25 @@ class _TermConditionPageState extends State<TermConditionPage> {
             Container(
               height: heigth * 1,
               width: width * 1,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                      'assets/images/ELLA, SRI LANKA_ 13 Incredible Things To Do In Ella _ The Common Wanderer.jpg'),
+                      'assets/images/image5.jpg'),
                 ),
               ),
             ),
             Container(
               height: heigth * 1,
               width: width * 1,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.center,
                       colors: [
-                    Colors.black,
-                    Colors.transparent,
-                  ])),
+                        Colors.black,
+                        Colors.transparent,
+                      ])),
             ),
             Positioned(
               bottom: 0,
@@ -49,7 +49,7 @@ class _TermConditionPageState extends State<TermConditionPage> {
                   child: Column(
                     children: [
                       Text(
-                        'Life is\nshort and the world is wide',
+                        "People don't take trips take pepole",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: width * 0.12,
@@ -57,31 +57,26 @@ class _TermConditionPageState extends State<TermConditionPage> {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'At Friend tours and trave, we customize reliable and trutworthy education tours  to',
+                        'To get the best of your adventure\n you just need to leave and go where you like. ',
                         style: TextStyle(
                             color: Colors.white54,
                             fontSize: width * 0.05,
                             fontFamily: 'mont',
                             fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Padding(
                         padding: const EdgeInsets.only(
                             bottom: 20, right: 8),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).pushNamed('/page2');
-                          },
-                          child: Container(
-                            height: heigth * 0.08,
-                            width: width * 1,
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text('Get Started',style: TextStyle(color: Colors.white,fontSize: width*0.06),),
+                        child: Container(
+                          height: heigth * 0.08,
+                          width: width * 1,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(15),
                           ),
+                          alignment: Alignment.center,
+                          child: Text('Next',style: TextStyle(color: Colors.white,fontSize: width*0.07,letterSpacing: 1),),
                         ),
                       )
                     ],
