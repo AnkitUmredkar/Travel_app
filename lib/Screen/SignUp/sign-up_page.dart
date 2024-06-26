@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:travel_app/Screen/SignUp/sign-up_page.dart';
+import 'package:travel_app/Screen/SignUp/sign-in_page.dart';
 
-GlobalKey<FormState> formKeySignIn = GlobalKey();
+GlobalKey<FormState> formKeySignUp = GlobalKey();
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -20,24 +20,24 @@ class _SignInPageState extends State<SignInPage> {
       child: Scaffold(
         backgroundColor: Color(0xff121212),
         body: Form(
-          key: formKeySignIn,
+          key: formKeySignUp,
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     Navigator.of(context).pop();
-                  //   },
-                  //   child: Icon(
-                  //     Icons.arrow_back_ios,
-                  //     color: Colors.white,
-                  //   ),
-                  // ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.of(context).pop();
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                    ),
+                  ),
                   SizedBox(height: height * 0.045),
-                  Text('Welcome back',
+                  Text('Become a Trivago\nmember.',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: width * 0.072,
@@ -64,7 +64,7 @@ class _SignInPageState extends State<SignInPage> {
                       } else if (value.length <= 10) {
                         return 'Enter valid e-mail or phone number';
                       }
-            
+
                       for (int i = 0; i < value.length; i++) {
                         if (value[i] != value[i].toLowerCase()) {
                           checkCapital = true;
@@ -96,18 +96,10 @@ class _SignInPageState extends State<SignInPage> {
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Color(0xff5D5D5D), width: 2)),
+                          BorderSide(color: Color(0xff5D5D5D), width: 2)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide(color: Colors.white, width: 2)),
-                      focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
-                          borderSide:
-                          BorderSide(color: Colors.redAccent, width: 2)),
-                      errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
-                          borderSide:
-                              BorderSide(color: Color(0xff5D5D5D), width: 2)),
                     ),
                   ),
                   SizedBox(height: height * 0.02),
@@ -170,18 +162,10 @@ class _SignInPageState extends State<SignInPage> {
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Color(0xff5D5D5D), width: 2)),
+                          BorderSide(color: Color(0xff5D5D5D), width: 2)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide(color: Colors.white, width: 2)),
-                      focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
-                          borderSide:
-                          BorderSide(color: Colors.redAccent, width: 2)),
-                      errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
-                          borderSide:
-                          BorderSide(color: Color(0xff5D5D5D), width: 2)),
                     ),
                   ),
                   SizedBox(height: height * 0.02),
@@ -199,7 +183,7 @@ class _SignInPageState extends State<SignInPage> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: Colors.white),
-                    child: Text('Sign in',
+                    child: Text('Sign up',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: width * 0.042,
@@ -208,14 +192,12 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   SizedBox(height: height * 0.024),
                   GestureDetector(
-                    onTap: () {
-                      if (formKeySignIn.currentState!.validate()) {
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                child: SignUpPage(),
-                                type: PageTransitionType.rightToLeft));
-                      }
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: SignInPage(),
+                              type: PageTransitionType.rightToLeft));
                     },
                     child: Container(
                       height: height * 0.068,
@@ -225,7 +207,7 @@ class _SignInPageState extends State<SignInPage> {
                         border: Border.all(color: Colors.white),
                         borderRadius: BorderRadius.circular(50),
                       ),
-                      child: Text('Sign up',
+                      child: Text('Sign in',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: width * 0.042,
@@ -234,7 +216,6 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                   SizedBox(height: height * 0.052),
-                  //todo ----------------> lats 3 icon
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -259,9 +240,3 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 }
-
-bool checkCapital = false,
-    checkSmall = false,
-    checkSpeChar = false,
-    checkDigit = false,
-    hideOrNot = false;
