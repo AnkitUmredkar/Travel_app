@@ -23,7 +23,7 @@ class _Page2State extends State<Page2> {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                      'assets/images/image4.jpg'),
+                      'assets/images/SplashScreenImages/image4.jpg'),
                 ),
               ),
             ),

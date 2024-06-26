@@ -23,7 +23,7 @@ class _TermConditionPageState extends State<TermConditionPage> {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                      'assets/images/ELLA, SRI LANKA_ 13 Incredible Things To Do In Ella _ The Common Wanderer.jpg'),
+                      'assets/images/SplashScreenImages/ELLA, SRI LANKA_ 13 Incredible Things To Do In Ella _ The Common Wanderer.jpg'),
                 ),
               ),
             ),
