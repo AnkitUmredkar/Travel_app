@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   page_transition: ^2.1.0
   curved_navigation_bar: ^1.0.6
+  readmore: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,8 @@ flutter:
   assets:
     - assets/images/SignUpPage_Images/
     - assets/images/SplashScreenImages/
+    - assets/images/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
