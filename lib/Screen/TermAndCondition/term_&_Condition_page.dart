@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:travel_app/Screen/TermAndCondition/page2.dart';
 
 class TermConditionPage extends StatefulWidget {
   const TermConditionPage({super.key});
@@ -17,8 +19,8 @@ class _TermConditionPageState extends State<TermConditionPage> {
         body: Stack(
           children: [
             Container(
-              height: heigth * 1,
-              width: width * 1,
+              height: heigth,
+              width: width,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
@@ -28,65 +30,77 @@ class _TermConditionPageState extends State<TermConditionPage> {
               ),
             ),
             Container(
-              height: heigth * 1,
-              width: width * 1,
+              height: heigth,
+              width: width,
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.center,
                       colors: [
-                    Colors.black,
+                    Colors.black87,
                     Colors.transparent,
                   ])),
             ),
-            Positioned(
-              bottom: 0,
-              child: Container(
-                height: heigth * 0.5,
-                width: width * 1,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Life is\nshort and the world is wide',
+            Container(
+              height: heigth,
+              width: width,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.center,
+                      colors: [
+                    Colors.black87,
+                    Colors.transparent,
+                  ])),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(25,25,25,12),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'Where do\nyou want to discover?',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: width * 0.1,
+                        fontFamily: 'arial',
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    'At Friend tours and trave, we customize reliable and trutworthy education tours  to',
+                    style: TextStyle(
+                        color: Colors.white54,
+                        fontSize: width * 0.048,
+                        fontFamily: 'arial',
+                        fontWeight: FontWeight.bold),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: Page2(),
+                              type: PageTransitionType.rightToLeft));
+                    },
+                    child: Container(
+                      height: heigth * 0.075,
+                      width: width,
+                      margin: EdgeInsets.only(top: 25),
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Get Started',
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: width * 0.12,
-                            fontFamily: 'mont',
-                            fontWeight: FontWeight.bold),
+                            fontSize: width * 0.06,
+                            fontFamily: 'arial'),
                       ),
-                      Text(
-                        'At Friend tours and trave, we customize reliable and trutworthy education tours  to',
-                        style: TextStyle(
-                            color: Colors.white54,
-                            fontSize: width * 0.05,
-                            fontFamily: 'mont',
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 20, right: 8),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).pushNamed('/page2');
-                          },
-                          child: Container(
-                            height: heigth * 0.08,
-                            width: width * 1,
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text('Get Started',style: TextStyle(color: Colors.white,fontSize: width*0.06),),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                    ),
+                  )
+                ],
               ),
             )
           ],

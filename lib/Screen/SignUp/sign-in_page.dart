@@ -3,6 +3,8 @@ import 'package:page_transition/page_transition.dart';
 import 'package:travel_app/Screen/SignUp/sign-up_page.dart';
 
 GlobalKey<FormState> formKeySignIn = GlobalKey();
+TextEditingController txtEmail = TextEditingController();
+TextEditingController txtPassword = TextEditingController();
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -12,13 +14,18 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  void initState(){
+    txtEmail.text = 'ankitumredkar77@gmail.com';
+    txtPassword.text = 'Anku@2519';
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff121212),
+        backgroundColor: Color(0xff22272c),
         body: Form(
           key: formKeySignIn,
           child: SingleChildScrollView(
@@ -64,7 +71,7 @@ class _SignInPageState extends State<SignInPage> {
                       } else if (value.length <= 10) {
                         return 'Enter valid e-mail or phone number';
                       }
-            
+
                       for (int i = 0; i < value.length; i++) {
                         if (value[i] != value[i].toLowerCase()) {
                           checkCapital = true;
@@ -87,6 +94,7 @@ class _SignInPageState extends State<SignInPage> {
                         return 'Special character is not Allow !';
                       }
                     },
+                    controller: txtEmail,
                     textInputAction: TextInputAction.next,
                     style: TextStyle(color: Colors.white),
                     cursorColor: Colors.teal,
@@ -99,11 +107,12 @@ class _SignInPageState extends State<SignInPage> {
                               BorderSide(color: Color(0xff5D5D5D), width: 2)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: BorderSide(color: Colors.white, width: 2)),
+                          borderSide:
+                              BorderSide(color: Colors.white, width: 2)),
                       focusedErrorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                          BorderSide(color: Colors.redAccent, width: 2)),
+                              BorderSide(color: Colors.redAccent, width: 2)),
                       errorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
@@ -162,6 +171,7 @@ class _SignInPageState extends State<SignInPage> {
                         return 'Minimum 1 character is need Digit !';
                       }
                     },
+                    controller: txtPassword,
                     style: TextStyle(color: Colors.white),
                     cursorColor: Colors.teal,
                     decoration: InputDecoration(
@@ -173,15 +183,16 @@ class _SignInPageState extends State<SignInPage> {
                               BorderSide(color: Color(0xff5D5D5D), width: 2)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: BorderSide(color: Colors.white, width: 2)),
+                          borderSide:
+                              BorderSide(color: Colors.white, width: 2)),
                       focusedErrorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                          BorderSide(color: Colors.redAccent, width: 2)),
+                              BorderSide(color: Colors.redAccent, width: 2)),
                       errorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                          BorderSide(color: Color(0xff5D5D5D), width: 2)),
+                              BorderSide(color: Color(0xff5D5D5D), width: 2)),
                     ),
                   ),
                   SizedBox(height: height * 0.02),
@@ -192,30 +203,39 @@ class _SignInPageState extends State<SignInPage> {
                           fontFamily: 'mont',
                           fontSize: width * 0.04)),
                   SizedBox(height: height * 0.035),
-                  Container(
-                    height: height * 0.068,
-                    width: width,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.white),
-                    child: Text('Sign in',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: width * 0.042,
-                            fontFamily: 'mont',
-                            fontWeight: FontWeight.bold)),
+                  GestureDetector(
+                    onTap: () {
+                      if (formKeySignIn.currentState!.validate()) {
+                        // Navigator.push(
+                        //     context,
+                        //     PageTransition(
+                        //         child: SignUpPage(),
+                        //         type: PageTransitionType.rightToLeft));
+                      }
+                    },
+                    child: Container(
+                      height: height * 0.068,
+                      width: width,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.white),
+                      child: Text('Sign in',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: width * 0.042,
+                              fontFamily: 'mont',
+                              fontWeight: FontWeight.bold)),
+                    ),
                   ),
                   SizedBox(height: height * 0.024),
                   GestureDetector(
                     onTap: () {
-                      if (formKeySignIn.currentState!.validate()) {
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                child: SignUpPage(),
-                                type: PageTransitionType.rightToLeft));
-                      }
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: SignUpPage(),
+                              type: PageTransitionType.rightToLeft));
                     },
                     child: Container(
                       height: height * 0.068,

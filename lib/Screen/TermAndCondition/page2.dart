@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:travel_app/Screen/TermAndCondition/page3.dart';
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
@@ -70,7 +72,11 @@ class _Page2State extends State<Page2> {
                             bottom: 20, right: 8),
                         child:InkWell(
                           onTap: () {
-                            Navigator.of(context).pushNamed('/page3');
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    child: Page3(),
+                                    type: PageTransitionType.rightToLeft));
                           },
                           child: Container(
                             height: heigth * 0.08,

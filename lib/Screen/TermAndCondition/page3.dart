@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:travel_app/Screen/SignUp/sign-in_page.dart';
 
 class Page3 extends StatefulWidget {
   const Page3({super.key});
@@ -68,15 +70,24 @@ class _Page3State extends State<Page3> {
                       Padding(
                         padding: const EdgeInsets.only(
                             bottom: 20, right: 8),
-                        child: Container(
-                          height: heigth * 0.08,
-                          width: width * 1,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(15),
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    child: SignInPage(),
+                                    type: PageTransitionType.rightToLeft));
+                          },
+                          child: Container(
+                            height: heigth * 0.08,
+                            width: width * 1,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text('Next',style: TextStyle(color: Colors.white,fontSize: width*0.07,letterSpacing: 1),),
                           ),
-                          alignment: Alignment.center,
-                          child: Text('Next',style: TextStyle(color: Colors.white,fontSize: width*0.07,letterSpacing: 1),),
                         ),
                       )
                     ],
