@@ -77,6 +77,7 @@ class _DetailPageState extends State<DetailPage> {
                   child: Container(
                     child: SingleChildScrollView(
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 20.0, right: 20),
@@ -164,12 +165,12 @@ class _DetailPageState extends State<DetailPage> {
                             height: height * 0.01,
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 20.0, right: 20),
+                            padding: const EdgeInsets.only(left: 20.0, right: 15),
                             child: ReadMoreText(
                               'The natural wonders of Cappadocia are even more impressive when viewed from the air and a hot air balloon',
                               style: TextStyle(color: Colors.white60,fontSize: width*0.05),
                               trimLines: 3,
-                              textAlign: TextAlign.justify,
+                              textAlign: TextAlign.start,
                               trimMode: TrimMode.Line,
                               trimCollapsedText: 'See more',
                               moreStyle: TextStyle(

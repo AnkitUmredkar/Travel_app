@@ -69,8 +69,10 @@ flutter:
     - assets/images/SignUpPage_Images/
     - assets/images/SplashScreenImages/
     - assets/images/
-    - assets/images/
     - assets/images/CategoryWiseImages/AllImages/
+    - assets/images/culturalImages/
+    - assets/images/CategoryWiseImages/Family Vaction Images/
+    - assets/images/CategoryWiseImages/Nature & Wildlife/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

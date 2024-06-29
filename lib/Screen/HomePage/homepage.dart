@@ -102,7 +102,10 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(8),
                             color: Colors.white70.withOpacity(0.12),
                           ),
-                          child: TextField(
+                          child:  TextField(
+                            onTap: () {
+                              Navigator.of(context).pushNamed('/search');
+                            },
                             cursorColor: Colors.blue,
                             style: TextStyle(
                                 color: Colors.white, fontFamily: 'mont'),
@@ -155,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(height: height * 0.035),
                     Wrap(
                       spacing: width * 0.034,
-                      children: List.generate(packageList.length, (index) =>
+                      children: List.generate(foundUser.length, (index) =>
                       (index == 0) ? ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                       child: BackdropFilter(
@@ -179,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                                     color: Colors.blue,
                                     image: DecorationImage(
                                         image: AssetImage(
-                                            packageList[index]['img']),
+                                            foundUser[index]['img']),
                                         fit: BoxFit.cover)),
                               ),
                               Padding(
@@ -188,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      packageList[index]['name'],
+                                      foundUser[index]['name'],
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontFamily: 'mont',
@@ -207,7 +210,7 @@ class _HomePageState extends State<HomePage> {
                                               size: width * 0.044,
                                             ),
                                             Text(
-                                              ' ${packageList[index]['price']}',
+                                              ' ${foundUser[index]['price']}',
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: width * 0.04,
@@ -224,7 +227,7 @@ class _HomePageState extends State<HomePage> {
                                               size: width * 0.044,
                                             ),
                                             Text(
-                                              ' ${packageList[index]['location']}',
+                                              ' ${foundUser[index]['location']}',
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: width * 0.035,
@@ -237,7 +240,7 @@ class _HomePageState extends State<HomePage> {
                                             Icon(Icons.star_half,color: Colors.amberAccent,
                                                 size: width * 0.054),
                                             Text(
-                                              ' ${packageList[index]['rate']}',
+                                              ' ${foundUser[index]['rate']}',
                                               style: TextStyle(
                                                   color: Colors.white70,
                                                   fontSize: width * 0.037,
@@ -278,7 +281,7 @@ class _HomePageState extends State<HomePage> {
                                           color: Colors.blue,
                                           image: DecorationImage(
                                               image: AssetImage(
-                                                  packageList[index]['img']),
+                                                  foundUser[index]['img']),
                                               fit: BoxFit.cover)),
                                     ),
                                     Padding(
@@ -287,7 +290,7 @@ class _HomePageState extends State<HomePage> {
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            packageList[index]['name'],
+                                            foundUser[index]['name'],
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontFamily: 'mont',
@@ -306,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                                                     size: width * 0.044,
                                                   ),
                                                   Text(
-                                                    '${packageList[index]['location']}',
+                                                    '${foundUser[index]['location']}',
                                                     style: TextStyle(
                                                         color: Colors.white,
                                                         fontSize: (index == 2) ? width * 0.029 : width * 0.035,
@@ -319,7 +322,7 @@ class _HomePageState extends State<HomePage> {
                                                   Icon(Icons.star_half,color: Colors.amberAccent,
                                                       size: width * 0.054),
                                                   Text(
-                                                    ' ${packageList[index]['rate']}',
+                                                    ' ${foundUser[index]['rate']}',
                                                     style: TextStyle(
                                                         color: Colors.white70,
                                                         fontSize: width * 0.037,
@@ -337,7 +340,7 @@ class _HomePageState extends State<HomePage> {
                                                 size: width * 0.044,
                                               ),
                                               Text(
-                                                '${packageList[index]['price']}',
+                                                '${foundUser[index]['price']}',
                                                 style: TextStyle(
                                                     color: Colors.white,
                                                     fontSize: width * 0.04,
