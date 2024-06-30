@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:travel_app/Screen/TermAndCondition/page2.dart';
+import 'package:travel_app/utils/global.dart';
 
 class TermConditionPage extends StatefulWidget {
   const TermConditionPage({super.key});
@@ -87,7 +88,7 @@ class _TermConditionPageState extends State<TermConditionPage> {
                       width: width,
                       margin: EdgeInsets.only(top: 25),
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: blueColor,
                         borderRadius: BorderRadius.circular(15),
                       ),
                       alignment: Alignment.center,

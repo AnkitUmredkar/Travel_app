@@ -1,11 +1,9 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:travel_app/Screen/BookingPage/bookingPage.dart';
 import 'package:travel_app/Screen/HomePage/homePage.dart';
 import 'package:travel_app/utils/global.dart';
-
 import '../Erecept/E-Recept.dart';
 
 class SuccessPaymentPage extends StatefulWidget {

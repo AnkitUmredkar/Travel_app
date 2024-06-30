@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:travel_app/Screen/TermAndCondition/page3.dart';
+import 'package:travel_app/utils/global.dart';
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
@@ -19,9 +20,9 @@ class _Page2State extends State<Page2> {
         body: Stack(
           children: [
             Container(
-              height: heigth * 1,
-              width: width * 1,
-              decoration: const BoxDecoration(
+              height: heigth,
+              width: width,
+              decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
@@ -30,69 +31,77 @@ class _Page2State extends State<Page2> {
               ),
             ),
             Container(
-              height: heigth * 1,
-              width: width * 1,
-              decoration: const BoxDecoration(
+              height: heigth,
+              width: width,
+              decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.center,
                       colors: [
-                        Colors.black,
+                        Colors.black87,
                         Colors.transparent,
                       ])),
             ),
-            Positioned(
-              bottom: 0,
-              child: Container(
-                height: heigth * 0.5,
-                width: width * 1,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Column(
-                    children: [
-                      Text(
-                        "It's a big world out there go explore",
+            Container(
+              height: heigth,
+              width: width,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.center,
+                      colors: [
+                        Colors.black87,
+                        Colors.transparent,
+                      ])),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(25,25,25,12),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "It's a big world out there go explore",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: width * 0.1,
+                        fontFamily: 'arial',
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    'To get the best of your adventure\n you just need to leave and go where you like.',
+                    style: TextStyle(
+                        color: Colors.white54,
+                        fontSize: width * 0.048,
+                        fontFamily: 'arial',
+                        fontWeight: FontWeight.bold),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: Page3(),
+                              type: PageTransitionType.rightToLeft));
+                    },
+                    child: Container(
+                      height: heigth * 0.075,
+                      width: width,
+                      margin: EdgeInsets.only(top: 25),
+                      decoration: BoxDecoration(
+                        color: blueColor,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Get Started',
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: width * 0.12,
-                            fontFamily: 'mont',
-                            fontWeight: FontWeight.bold),
+                            fontSize: width * 0.06,
+                            fontFamily: 'arial'),
                       ),
-                      Text(
-                        'To get the best of your adventure\n you just need to leave and go where you like. ',
-                        style: TextStyle(
-                            color: Colors.white54,
-                            fontSize: width * 0.05,
-                            fontFamily: 'mont',
-                            fontWeight: FontWeight.bold),
-                      ),
-                      const Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 20, right: 8),
-                        child:InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    child: Page3(),
-                                    type: PageTransitionType.rightToLeft));
-                          },
-                          child: Container(
-                            height: heigth * 0.08,
-                            width: width * 1,
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text('Next',style: TextStyle(color: Colors.white,fontSize: width*0.07,letterSpacing: 1),),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                    ),
+                  )
+                ],
               ),
             )
           ],

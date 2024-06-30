@@ -25,7 +25,7 @@ class _SignInPageState extends State<SignInPage> {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff22272c),
+        backgroundColor: Color(0xff121212),
         body: Form(
           key: formKeySignIn,
           child: SingleChildScrollView(
