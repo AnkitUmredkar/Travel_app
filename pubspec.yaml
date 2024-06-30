@@ -38,6 +38,9 @@ dependencies:
   page_transition: ^2.1.0
   curved_navigation_bar: ^1.0.6
   readmore: ^3.0.0
+  image_picker: ^1.1.2
+  fluttertoast: ^8.2.6
+  image_gallery_saver: ^2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -68,11 +71,79 @@ flutter:
   assets:
     - assets/images/SignUpPage_Images/
     - assets/images/SplashScreenImages/
+    - assets/images/PaymentImages/
     - assets/images/
     - assets/images/CategoryWiseImages/AllImages/
-    - assets/images/culturalImages/
-    - assets/images/CategoryWiseImages/Family Vaction Images/
-    - assets/images/CategoryWiseImages/Nature & Wildlife/
+    - assets/images/CategoryWiseImages/AllImages/Balloon/
+    - assets/images/CategoryWiseImages/AllImages/Beach/
+    - assets/images/CategoryWiseImages/AllImages/EiffelTower/
+    - assets/images/CategoryWiseImages/AllImages/Gulmarg/
+    - assets/images/CategoryWiseImages/AllImages/HillStation/
+    - assets/images/CategoryWiseImages/AllImages/NubraValley/
+    - assets/images/CategoryWiseImages/AllImages/GateIndia/
+    - assets/images/CategoryWiseImages/AllImages/JogFalls/
+    - assets/images/CategoryWiseImages/AllImages/Unity/
+    - assets/images/CategoryWiseImages/AllImages/Rani/
+    - assets/images/CategoryWiseImages/MountainImages/
+    - assets/images/CategoryWiseImages/MountainImages/Jog/
+    - assets/images/CategoryWiseImages/MountainImages/Ladakh/
+    - assets/images/CategoryWiseImages/MountainImages/Lonavala/
+    - assets/images/CategoryWiseImages/MountainImages/RopeWay/
+    - assets/images/CategoryWiseImages/MountainImages/HillStation/
+    - assets/images/CategoryWiseImages/MountainImages/Shillong/
+    - assets/images/CategoryWiseImages/TempleImages/
+    - assets/images/CategoryWiseImages/TempleImages/Kedarnath/
+    - assets/images/CategoryWiseImages/TempleImages/Amarnath/
+    - assets/images/CategoryWiseImages/TempleImages/Dwarka/
+    - assets/images/CategoryWiseImages/TempleImages/Jagannath/
+    - assets/images/CategoryWiseImages/TempleImages/Kanchipuram/
+    - assets/images/CategoryWiseImages/TempleImages/Kashi/
+    - assets/images/CategoryWiseImages/TempleImages/SwarnMandir/
+    - assets/images/CategoryWiseImages/TempleImages/Tirupati/
+    - assets/images/CategoryWiseImages/TempleImages/PadmanTemple/
+    - assets/images/CategoryWiseImages/BeachImages/
+    - assets/images/CategoryWiseImages/BeachImages/Goa/
+    - assets/images/CategoryWiseImages/BeachImages/Lily/
+    - assets/images/CategoryWiseImages/BeachImages/Devka/
+    - assets/images/CategoryWiseImages/BeachImages/Wandoor/
+    - assets/images/CategoryWiseImages/BeachImages/Marina/
+    - assets/images/CategoryWiseImages/BeachImages/Serenity/
+    - assets/images/CategoryWiseImages/BeachImages/Karavatti/
+    - assets/images/CategoryWiseImages/BeachImages/Anjuna/
+    - assets/images/CategoryWiseImages/BeachImages/Malva/
+    - assets/images/CategoryWiseImages/AncientImages/
+    - assets/images/CategoryWiseImages/AncientImages/Taj Mahal/
+    - assets/images/CategoryWiseImages/AncientImages/Qutab Minar/
+    - assets/images/CategoryWiseImages/AncientImages/Jalilawala Bagh/
+    - assets/images/CategoryWiseImages/AncientImages/Buland Darawaga/
+    - assets/images/CategoryWiseImages/AncientImages/Hampi/
+    - assets/images/CategoryWiseImages/AncientImages/Sanchi/
+    - assets/images/CategoryWiseImages/AncientImages/Mohejo-dado/
+    - assets/images/CategoryWiseImages/AncientImages/Char Minar/
+    - assets/images/CategoryWiseImages/AncientImages/Khajuraho Temple/
+    - assets/images/CategoryWiseImages/CulturalImages/Athens Greece/
+    - assets/images/CategoryWiseImages/CulturalImages/Barcelona Spain/
+    - assets/images/CategoryWiseImages/CulturalImages/Dubail Uae/
+    - assets/images/CategoryWiseImages/CulturalImages/Jerusalem Israel/
+    - assets/images/CategoryWiseImages/CulturalImages/Kyoto, Japan/
+    - assets/images/CategoryWiseImages/CulturalImages/Mexico City Mexico/
+    - assets/images/CategoryWiseImages/CulturalImages/Rome Italy/
+    - assets/images/CategoryWiseImages/CulturalImages/varansi india/
+    - assets/images/CategoryWiseImages/Family Vaction Images/austellia/
+    - assets/images/CategoryWiseImages/Family Vaction Images/Canada/
+    - assets/images/CategoryWiseImages/Family Vaction Images/Maxico/
+    - assets/images/CategoryWiseImages/Family Vaction Images/New york/
+    - assets/images/CategoryWiseImages/Family Vaction Images/New zeland/
+    - assets/images/CategoryWiseImages/Family Vaction Images/South Africa/
+    - assets/images/CategoryWiseImages/Family Vaction Images/spain/
+    - assets/images/CategoryWiseImages/Nature & Wildlife/Australia/
+    - assets/images/CategoryWiseImages/Nature & Wildlife/Botswana/
+    - assets/images/CategoryWiseImages/Nature & Wildlife/Canada/
+    - assets/images/CategoryWiseImages/Nature & Wildlife/Chile/
+    - assets/images/CategoryWiseImages/Nature & Wildlife/Ecuador/
+    - assets/images/CategoryWiseImages/Nature & Wildlife/Nepal/
+    - assets/images/CategoryWiseImages/Nature & Wildlife/South Africa/
+    - assets/images/CategoryWiseImages/Nature & Wildlife/Tanzania/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

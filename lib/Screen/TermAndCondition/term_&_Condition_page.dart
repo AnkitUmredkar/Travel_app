@@ -37,9 +37,9 @@ class _TermConditionPageState extends State<TermConditionPage> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.center,
                       colors: [
-                    Colors.black87,
-                    Colors.transparent,
-                  ])),
+                        Colors.black87,
+                        Colors.transparent,
+                      ])),
             ),
             Container(
               height: heigth,
@@ -49,9 +49,9 @@ class _TermConditionPageState extends State<TermConditionPage> {
                       begin: Alignment.bottomCenter,
                       end: Alignment.center,
                       colors: [
-                    Colors.black87,
-                    Colors.transparent,
-                  ])),
+                        Colors.black87,
+                        Colors.transparent,
+                      ])),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(25,25,25,12),
