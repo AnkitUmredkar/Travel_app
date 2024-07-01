@@ -36,7 +36,7 @@ class _E_ReceptState extends State<E_Recept> {
                   onTap: () {
                     Navigator.of(context).pop();
                   },
-                  child: Icon(Icons.arrow_back_ios,color: Colors.white,),
+                  child: const Icon(Icons.arrow_back_ios,color: Colors.white,),
                 ),
                 Text(
                   'E-Receipt',
@@ -96,11 +96,11 @@ class _E_ReceptState extends State<E_Recept> {
                             decoration: BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color(0xff3492fd).withOpacity(0.4),
+                                    color: const Color(0xff3492fd).withOpacity(0.4),
                                     blurRadius: 15,
                                     spreadRadius: 25,
                                   ),
-                                  BoxShadow(
+                                  const BoxShadow(
                                     color: Color(0xff152a56),
                                     blurRadius: 12,
                                     spreadRadius: 10,
@@ -133,7 +133,7 @@ class _E_ReceptState extends State<E_Recept> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.location_on, color: Colors.white70,),
+                              const Icon(Icons.location_on, color: Colors.white70,),
                               Text(
                                 '${cartList[bookingIndex]['location']}',
                                 style: TextStyle(

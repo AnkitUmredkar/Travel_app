@@ -1,8 +1,6 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:travel_app/Screen/BookingPage/bookingPage.dart';
 import 'package:travel_app/utils/global.dart';
 
 import '../SuccessPaymentPage/paymentSuccessPage.dart';
@@ -345,7 +343,7 @@ class _PaymentPageState extends State<PaymentPage> {
             Navigator.push(
                 context,
                 PageTransition(
-                    child: SuccessPaymentPage(),
+                    child: const SuccessPaymentPage(),
                     type: PageTransitionType
                         .fade));
           },

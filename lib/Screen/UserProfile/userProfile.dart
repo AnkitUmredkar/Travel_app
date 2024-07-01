@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:travel_app/Screen/BookingPage/bookingPage.dart';
 import 'package:travel_app/Screen/SignUp/sign-in_page.dart';
 import 'package:travel_app/utils/global.dart';
 
@@ -95,8 +94,8 @@ class _UserProfileState extends State<UserProfile> {
                                                   });
                                                   Navigator.pop(context);
                                                 },
-                                                title: Text('Gallery',style: TextStyle(color: Colors.white),),
-                                                leading: Icon(Icons.image,color: Colors.white,),
+                                                title: const Text('Gallery',style: TextStyle(color: Colors.white),),
+                                                leading: const Icon(Icons.image,color: Colors.white,),
                                               ),
                                               ListTile(
                                                 onTap: () async {
@@ -108,8 +107,8 @@ class _UserProfileState extends State<UserProfile> {
                                                   });
                                                   Navigator.pop(context);
                                                 },
-                                                title: Text('Camera',style: TextStyle(color: Colors.white),),
-                                                leading: Icon(Icons.camera_alt,color: Colors.white,),
+                                                title: const Text('Camera',style: TextStyle(color: Colors.white),),
+                                                leading: const Icon(Icons.camera_alt,color: Colors.white,),
                                               ),
                                             ],
                                           ),
@@ -224,8 +223,8 @@ class _UserProfileState extends State<UserProfile> {
                               color: Colors.white70.withOpacity(0.12),
                             ),
                             child: ListTile(
-                              title: Text(nameCtrl.text,style: TextStyle(color: Colors.white,fontFamily: 'mont'),),
-                              trailing: Icon(Icons.edit,color: Colors.white70),
+                              title: Text(nameCtrl.text,style: const TextStyle(color: Colors.white,fontFamily: 'mont'),),
+                              trailing: const Icon(Icons.edit,color: Colors.white70),
                             ),
                           )
                         ),
@@ -245,10 +244,10 @@ class _UserProfileState extends State<UserProfile> {
                                         backgroundColor: bgColor,
                                         contentPadding: const EdgeInsets.fromLTRB(20,25,20,25),
                                         content: TextField(
-                                          style: TextStyle(color: Colors.white,fontFamily: 'mont'),
+                                          style: const TextStyle(color: Colors.white,fontFamily: 'mont'),
                                           controller: popupCtrl,
                                           cursorColor: Colors.blue,
-                                          decoration: InputDecoration(
+                                          decoration: const InputDecoration(
                                               hintText: 'Enter Your Location',
                                               hintStyle: TextStyle(color: Colors.white70,fontFamily: 'mont')
                                           ),
@@ -290,8 +289,8 @@ class _UserProfileState extends State<UserProfile> {
                                 color: Colors.white70.withOpacity(0.12),
                               ),
                               child: ListTile(
-                                title: Text(locationCtrl.text,style: TextStyle(color: Colors.white,fontFamily: 'mont'),),
-                                trailing: Icon(Icons.edit,color: Colors.white70),
+                                title: Text(locationCtrl.text,style: const TextStyle(color: Colors.white,fontFamily: 'mont'),),
+                                trailing: const Icon(Icons.edit,color: Colors.white70),
                               ),
                             )
                         ),
@@ -311,10 +310,10 @@ class _UserProfileState extends State<UserProfile> {
                                         backgroundColor: bgColor,
                                         contentPadding: const EdgeInsets.fromLTRB(20,25,20,25),
                                         content: TextField(
-                                          style: TextStyle(color: Colors.white,fontFamily: 'mont'),
+                                          style: const TextStyle(color: Colors.white,fontFamily: 'mont'),
                                           controller: popupCtrl,
                                           cursorColor: Colors.blue,
-                                          decoration: InputDecoration(
+                                          decoration: const InputDecoration(
                                               hintText: 'Enter Your Nation',
                                               hintStyle: TextStyle(color: Colors.white70,fontFamily: 'mont')
                                           ),
@@ -356,8 +355,8 @@ class _UserProfileState extends State<UserProfile> {
                                 color: Colors.white70.withOpacity(0.12),
                               ),
                               child: ListTile(
-                                title: Text(nationCtrl.text,style: TextStyle(color: Colors.white,fontFamily: 'mont'),),
-                                trailing: Icon(Icons.edit,color: Colors.white70),
+                                title: Text(nationCtrl.text,style: const TextStyle(color: Colors.white,fontFamily: 'mont'),),
+                                trailing: const Icon(Icons.edit,color: Colors.white70),
                               ),
                             )
                         ),
@@ -377,10 +376,10 @@ class _UserProfileState extends State<UserProfile> {
                                         backgroundColor: bgColor,
                                         contentPadding: const EdgeInsets.fromLTRB(20,25,20,25),
                                         content: TextField(
-                                          style: TextStyle(color: Colors.white,fontFamily: 'mont'),
+                                          style: const TextStyle(color: Colors.white,fontFamily: 'mont'),
                                           controller: popupCtrl,
                                           cursorColor: Colors.blue,
-                                          decoration: InputDecoration(
+                                          decoration: const InputDecoration(
                                               hintText: 'Enter Mobile Numner',
                                               hintStyle: TextStyle(color: Colors.white70,fontFamily: 'mont')
                                           ),
@@ -422,8 +421,8 @@ class _UserProfileState extends State<UserProfile> {
                                 color: Colors.white70.withOpacity(0.12),
                               ),
                               child: ListTile(
-                                title: Text(numberCtrl.text,style: TextStyle(color: Colors.white,fontFamily: 'mont'),),
-                                trailing: Icon(Icons.edit,color: Colors.white70),
+                                title: Text(numberCtrl.text,style: const TextStyle(color: Colors.white,fontFamily: 'mont'),),
+                                trailing: const Icon(Icons.edit,color: Colors.white70),
                               ),
                             )
                         ),
@@ -439,8 +438,8 @@ class _UserProfileState extends State<UserProfile> {
                             color: Colors.white70.withOpacity(0.12),
                           ),
                           child: ListTile(
-                            title: Text(txtEmail.text,style: TextStyle(color: Colors.white,fontFamily: 'mont'),),
-                            trailing: Icon(Icons.edit,color: Colors.white70),
+                            title: Text(txtEmail.text,style: const TextStyle(color: Colors.white,fontFamily: 'mont'),),
+                            trailing: const Icon(Icons.edit,color: Colors.white70),
                           ),
                         ),
                       ],

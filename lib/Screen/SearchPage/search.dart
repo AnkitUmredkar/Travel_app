@@ -39,6 +39,7 @@ class _SearchScreenState extends State<SearchScreen> {
       foundUser = results;
     });
   }
+  @override
   Widget build(BuildContext context) {
 
     @override
@@ -86,7 +87,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
                 Expanded(
-                  child: (foundUser.length > 0)
+                  child: (foundUser.isNotEmpty)
                       ? Padding(
                     padding: EdgeInsets.all(width * 0.04),
                     child: ListView.builder(

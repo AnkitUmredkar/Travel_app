@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/utils/global.dart';
 
+import '../Screen/SignUp/sign-in_page.dart';
+import '../utils/auth_service.dart';
+
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
 
@@ -106,9 +109,15 @@ class _SettingPageState extends State<SettingPage> {
                         ),
                         SizedBox(height: height*0.005,),
                         Divider(height: height*0.002,color: Colors.grey,endIndent: 10,indent: 10,),
-                        ListTile(
-                          title: Text('Log Out',style: TextStyle(color: Colors.red,fontFamily:'mont',fontSize: width*0.04),),
-                          trailing: Icon(CupertinoIcons.right_chevron,color: Colors.red,size: width*0.05,),
+                        InkWell(
+                          onTap: () async {
+                            await FireBaseServices().googleSignOut();
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => SignInPage(),));
+                          },
+                          child: ListTile(
+                            title: Text('Log Out',style: TextStyle(color: Colors.red,fontFamily:'mont',fontSize: width*0.04),),
+                            trailing: Icon(CupertinoIcons.right_chevron,color: Colors.red,size: width*0.05,),
+                          ),
                         ),
                         SizedBox(height: height*0.005),
                       ],

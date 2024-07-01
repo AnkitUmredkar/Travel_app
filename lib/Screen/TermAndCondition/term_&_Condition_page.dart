@@ -22,7 +22,7 @@ class _TermConditionPageState extends State<TermConditionPage> {
             Container(
               height: heigth,
               width: width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
@@ -33,7 +33,7 @@ class _TermConditionPageState extends State<TermConditionPage> {
             Container(
               height: heigth,
               width: width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.center,
@@ -45,7 +45,7 @@ class _TermConditionPageState extends State<TermConditionPage> {
             Container(
               height: heigth,
               width: width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.center,
@@ -80,13 +80,13 @@ class _TermConditionPageState extends State<TermConditionPage> {
                       Navigator.push(
                           context,
                           PageTransition(
-                              child: Page2(),
+                              child: const Page2(),
                               type: PageTransitionType.rightToLeft));
                     },
                     child: Container(
                       height: heigth * 0.075,
                       width: width,
-                      margin: EdgeInsets.only(top: 25),
+                      margin: const EdgeInsets.only(top: 25),
                       decoration: BoxDecoration(
                         color: blueColor,
                         borderRadius: BorderRadius.circular(15),

@@ -19,6 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
   void initState(){
     setState(() {});
     Timer(const Duration(seconds: 2), () {
@@ -110,13 +111,13 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(8),
                               color: Colors.white70.withOpacity(0.12),
                             ),
-                            child: AbsorbPointer(
+                            child: const AbsorbPointer(
                               absorbing: true,
                               child: TextField(
                                 cursorColor: Colors.blue,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: Colors.white, fontFamily: 'mont'),
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                     prefixIcon: Icon(
                                       Icons.search,
                                       color: Colors.white70,

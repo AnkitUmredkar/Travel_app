@@ -18,7 +18,7 @@ class _SignUpPageState extends State<SignUpPage> {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff121212),
+        backgroundColor: const Color(0xff121212),
         body: Form(
           key: formKeySignUp,
           child: SingleChildScrollView(
@@ -31,7 +31,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     onTap: (){
                       Navigator.of(context).pop();
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back_ios,
                       color: Colors.white,
                     ),
@@ -50,7 +50,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           fontSize: width * 0.04,
                           fontFamily: 'mont',
                           fontWeight: FontWeight.bold)),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   TextFormField(
                     validator: (value) {
                       bool checkCapital = false;
@@ -86,20 +86,21 @@ class _SignUpPageState extends State<SignUpPage> {
                       if (checkSpeChar) {
                         return 'Special character is not Allow !';
                       }
+                      return null;
                     },
                     textInputAction: TextInputAction.next,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     cursorColor: Colors.teal,
                     decoration: InputDecoration(
-                      fillColor: Color(0xff333333),
+                      fillColor: const Color(0xff333333),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                          BorderSide(color: Color(0xff5D5D5D), width: 2)),
+                          const BorderSide(color: Color(0xff5D5D5D), width: 2)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: BorderSide(color: Colors.white, width: 2)),
+                          borderSide: const BorderSide(color: Colors.white, width: 2)),
                     ),
                   ),
                   SizedBox(height: height * 0.02),
@@ -109,7 +110,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           fontSize: width * 0.04,
                           fontFamily: 'mont',
                           fontWeight: FontWeight.bold)),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   TextFormField(
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -153,19 +154,20 @@ class _SignUpPageState extends State<SignUpPage> {
                       if (!checkDigit) {
                         return 'Minimum 1 character is need Digit !';
                       }
+                      return null;
                     },
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     cursorColor: Colors.teal,
                     decoration: InputDecoration(
-                      fillColor: Color(0xff333333),
+                      fillColor: const Color(0xff333333),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                          BorderSide(color: Color(0xff5D5D5D), width: 2)),
+                          const BorderSide(color: Color(0xff5D5D5D), width: 2)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: BorderSide(color: Colors.white, width: 2)),
+                          borderSide: const BorderSide(color: Colors.white, width: 2)),
                     ),
                   ),
                   SizedBox(height: height * 0.02),
@@ -196,7 +198,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       Navigator.push(
                           context,
                           PageTransition(
-                              child: SignInPage(),
+                              child: const SignInPage(),
                               type: PageTransitionType.rightToLeft));
                     },
                     child: Container(
@@ -223,10 +225,10 @@ class _SignUpPageState extends State<SignUpPage> {
                         'assets/images/SignUpPage_Images/facebook.png',
                         height: width * 0.1,
                       ),
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
                       Image.asset('assets/images/SignUpPage_Images/google.png',
                           height: width * 0.1),
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
                       Image.asset('assets/images/SignUpPage_Images/twitter.png',
                           height: width * 0.1),
                     ],

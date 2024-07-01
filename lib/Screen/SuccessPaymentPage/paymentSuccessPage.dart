@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:travel_app/Screen/BookingPage/bookingPage.dart';
@@ -55,7 +54,7 @@ class _SuccessPaymentPageState extends State<SuccessPaymentPage> {
                           Navigator.push(
                               context,
                               PageTransition(
-                                  child: E_Recept(),
+                                  child: const E_Recept(),
                                   type: PageTransitionType.rightToLeft));
                         },
                         child: Text(
@@ -84,11 +83,11 @@ class _SuccessPaymentPageState extends State<SuccessPaymentPage> {
                         decoration: BoxDecoration(
                             boxShadow: [
                               BoxShadow(
-                                color: Color(0xff3492fd).withOpacity(0.4),
+                                color: const Color(0xff3492fd).withOpacity(0.4),
                                 blurRadius: 25,
                                 spreadRadius: 35,
                               ),
-                              BoxShadow(
+                              const BoxShadow(
                                 color: Color(0xff152a56),
                                 blurRadius: 22,
                                 spreadRadius: 20,
@@ -121,7 +120,7 @@ class _SuccessPaymentPageState extends State<SuccessPaymentPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.location_on,color: Colors.white70,),
+                          const Icon(Icons.location_on,color: Colors.white70,),
                           Text(
                             '${cartList[bookingIndex]['location']} | ',
                             style: TextStyle(
@@ -154,7 +153,7 @@ class _SuccessPaymentPageState extends State<SuccessPaymentPage> {
                   Navigator.push(
                       context,
                       PageTransition(
-                          child: HomePage(),
+                          child: const HomePage(),
                           type: PageTransitionType.rightToLeft));
                 },
                 child: Container(

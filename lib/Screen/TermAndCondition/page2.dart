@@ -22,7 +22,7 @@ class _Page2State extends State<Page2> {
             Container(
               height: heigth,
               width: width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
@@ -33,7 +33,7 @@ class _Page2State extends State<Page2> {
             Container(
               height: heigth,
               width: width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.center,
@@ -45,7 +45,7 @@ class _Page2State extends State<Page2> {
             Container(
               height: heigth,
               width: width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.center,
@@ -80,20 +80,20 @@ class _Page2State extends State<Page2> {
                       Navigator.push(
                           context,
                           PageTransition(
-                              child: Page3(),
+                              child: const Page3(),
                               type: PageTransitionType.rightToLeft));
                     },
                     child: Container(
                       height: heigth * 0.075,
                       width: width,
-                      margin: EdgeInsets.only(top: 25),
+                      margin: const EdgeInsets.only(top: 25),
                       decoration: BoxDecoration(
                         color: blueColor,
                         borderRadius: BorderRadius.circular(15),
                       ),
                       alignment: Alignment.center,
                       child: Text(
-                        'Get Started',
+                        'Next',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: width * 0.06,

@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:travel_app/Screen/BookingPage/bookingPage.dart';
@@ -29,7 +28,7 @@ class _CartScreenState extends State<CartScreen> {
                     onTap: () {
                       Navigator.of(context).pop();
                     },
-                    child: Icon(Icons.arrow_back_ios,color: Colors.white,),
+                    child: const Icon(Icons.arrow_back_ios,color: Colors.white,),
                   ),
                   SizedBox(
                     width: width * 0.25,
@@ -99,7 +98,7 @@ class _CartScreenState extends State<CartScreen> {
                                               cartList.removeAt(index);
                                             });
                                           },
-                                          child: Icon(
+                                          child: const Icon(
                                             Icons.delete,
                                             color: Colors.white,
                                           )),
@@ -152,7 +151,7 @@ class _CartScreenState extends State<CartScreen> {
                                           Navigator.push(
                                               context,
                                               PageTransition(
-                                                  child: BookingPage(),
+                                                  child: const BookingPage(),
                                                   type: PageTransitionType
                                                       .fade));
                                         },
@@ -164,7 +163,7 @@ class _CartScreenState extends State<CartScreen> {
                                               color: blueColor,
                                               borderRadius:
                                               BorderRadius.circular(50)),
-                                          child: Text(
+                                          child: const Text(
                                             'Book Now',
                                             style: TextStyle(
                                                 color: Colors.white,

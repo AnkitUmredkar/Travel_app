@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:travel_app/Screen/SignUp/sign-up_page.dart';
+import 'package:travel_app/utils/auth_service.dart';
+
+import '../HomePage/homePage.dart';
+
 
 GlobalKey<FormState> formKeySignIn = GlobalKey();
 TextEditingController txtEmail = TextEditingController();
@@ -14,8 +18,25 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  // final AuthService _authService = AuthService();
+  // User? _user;
+  //
+  // void _signIn() async {
+  //   User? user = await _authService.signInWithGoogle();
+  //   setState(() {
+  //     _user = user;
+  //   });
+  // }
+  // void _signOut() async {
+  //   await _authService.signOut();
+  //   setState(() {
+  //     _user = null;
+  //   });
+  // }
+
+  @override
   void initState(){
-    txtEmail.text = 'ankitumredkar77@gmail.com';
+    txtEmail.text = 'ankitumredkar77@gmail.com' ;
     txtPassword.text = 'Anku@2519';
     super.initState();
   }
@@ -25,7 +46,7 @@ class _SignInPageState extends State<SignInPage> {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff121212),
+        backgroundColor: const Color(0xff121212),
         body: Form(
           key: formKeySignIn,
           child: SingleChildScrollView(
@@ -57,7 +78,7 @@ class _SignInPageState extends State<SignInPage> {
                           fontSize: width * 0.04,
                           fontFamily: 'mont',
                           fontWeight: FontWeight.bold)),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   TextFormField(
                     validator: (value) {
                       bool checkCapital = false;
@@ -93,30 +114,31 @@ class _SignInPageState extends State<SignInPage> {
                       if (checkSpeChar) {
                         return 'Special character is not Allow !';
                       }
+                      return null;
                     },
-                    controller: txtEmail,
+                    controller:  txtEmail,
                     textInputAction: TextInputAction.next,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     cursorColor: Colors.teal,
                     decoration: InputDecoration(
-                      fillColor: Color(0xff333333),
+                      fillColor: const Color(0xff333333),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Color(0xff5D5D5D), width: 2)),
+                              const BorderSide(color: Color(0xff5D5D5D), width: 2)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Colors.white, width: 2)),
+                              const BorderSide(color: Colors.white, width: 2)),
                       focusedErrorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Colors.redAccent, width: 2)),
+                              const BorderSide(color: Colors.redAccent, width: 2)),
                       errorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Color(0xff5D5D5D), width: 2)),
+                              const BorderSide(color: Color(0xff5D5D5D), width: 2)),
                     ),
                   ),
                   SizedBox(height: height * 0.02),
@@ -126,7 +148,7 @@ class _SignInPageState extends State<SignInPage> {
                           fontSize: width * 0.04,
                           fontFamily: 'mont',
                           fontWeight: FontWeight.bold)),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   TextFormField(
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -170,29 +192,30 @@ class _SignInPageState extends State<SignInPage> {
                       if (!checkDigit) {
                         return 'Minimum 1 character is need Digit !';
                       }
+                      return null;
                     },
                     controller: txtPassword,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     cursorColor: Colors.teal,
                     decoration: InputDecoration(
-                      fillColor: Color(0xff333333),
+                      fillColor: const Color(0xff333333),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Color(0xff5D5D5D), width: 2)),
+                              const BorderSide(color: Color(0xff5D5D5D), width: 2)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Colors.white, width: 2)),
+                              const BorderSide(color: Colors.white, width: 2)),
                       focusedErrorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Colors.redAccent, width: 2)),
+                              const BorderSide(color: Colors.redAccent, width: 2)),
                       errorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: Color(0xff5D5D5D), width: 2)),
+                              const BorderSide(color: Color(0xff5D5D5D), width: 2)),
                     ),
                   ),
                   SizedBox(height: height * 0.02),
@@ -234,7 +257,7 @@ class _SignInPageState extends State<SignInPage> {
                       Navigator.push(
                           context,
                           PageTransition(
-                              child: SignUpPage(),
+                              child: const SignUpPage(),
                               type: PageTransitionType.rightToLeft));
                     },
                     child: Container(
@@ -258,14 +281,50 @@ class _SignInPageState extends State<SignInPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        'assets/images/SignUpPage_Images/facebook.png',
-                        height: width * 0.1,
+                      InkWell(
+                        onTap: () async {
+                          await FireBaseServices().googleSignOut();
+                        },
+                        child: Image.asset(
+                          'assets/images/SignUpPage_Images/facebook.png',
+                          height: width * 0.1,
+                        ),
                       ),
-                      SizedBox(width: 20),
-                      Image.asset('assets/images/SignUpPage_Images/google.png',
-                          height: width * 0.1),
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
+                      GestureDetector(
+                        onTap: () async {
+                          await FireBaseServices().signInWithGoogle();
+                          Navigator.push(context, PageTransition(
+                              child: const HomePage(),
+                              type: PageTransitionType.rightToLeft));
+                        },
+                        child: Image.asset('assets/images/SignUpPage_Images/google.png',
+                                height: width * 0.1),
+                      ),
+                     //  _user == null ? InkWell(
+                     //   onTap: () {
+                     //         _signIn();
+                     //   },
+                     //   child: Image.asset('assets/images/SignUpPage_Images/google.png',
+                     //       height: width * 0.1),
+                     // ) :
+                     //  Column(
+                     //    children: [
+                     //      TextButton(
+                     //          onPressed: _signOut,
+                     //          child: Text('Sign out',style: TextStyle(color: Colors.blue,fontSize: width*0.05 ),)),
+                     //    ],
+                     //  ),
+                      //   Column(
+                      //   children: [
+                      //     Text('Signed in as ${_user!.displayName}'),
+                      //     ElevatedButton(
+                      //       child: Text('Sign out'),
+                      //       onPressed: _signOut,
+                      //     ),
+                      //   ],
+                      // ),
+                      const SizedBox(width: 20),
                       Image.asset('assets/images/SignUpPage_Images/twitter.png',
                           height: width * 0.1),
                     ],

@@ -34,7 +34,7 @@ class _FavoritePageState extends State<FavoritePage> {
                       Navigator.push(
                           context,
                           PageTransition(
-                              child: HomePage(),
+                              child: const HomePage(),
                               type: PageTransitionType
                                   .rightToLeft));
                     },
@@ -70,7 +70,7 @@ class _FavoritePageState extends State<FavoritePage> {
                       Navigator.push(
                           context,
                           PageTransition(
-                              child: DetailPage(),
+                              child: const DetailPage(),
                               type: PageTransitionType
                                   .rightToLeft));
                     },
@@ -143,7 +143,7 @@ class _FavoritePageState extends State<FavoritePage> {
                                             color: Colors.black.withOpacity(0.5),
                                             shape: BoxShape.circle
                                         ),
-                                        child: Icon(Icons.favorite_rounded,color: Colors.red,),
+                                        child: const Icon(Icons.favorite_rounded,color: Colors.red,),
                                       ),
                                     ),
                                   ),

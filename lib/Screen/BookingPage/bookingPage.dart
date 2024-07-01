@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -17,6 +16,7 @@ class BookingPage extends StatefulWidget {
 }
 
 class _BookingPageState extends State<BookingPage> {
+  @override
   void initState(){
     people = 1;
     Date = 'Start Date';
@@ -238,7 +238,7 @@ class _BookingPageState extends State<BookingPage> {
                                     color: Colors.white70,
                                   ),
                                   Text(
-                                    '  ${Date}',
+                                    '  $Date',
                                     style: const TextStyle(
                                         color: Colors.white70,
                                         fontFamily: 'mont'),
@@ -279,7 +279,7 @@ class _BookingPageState extends State<BookingPage> {
                                                 ),
                                               ),
                                               Text(
-                                                '${people}',
+                                                '$people',
                                                 style: TextStyle(
                                                     fontSize: width * 0.05,
                                                     color: Colors.white,
@@ -409,7 +409,7 @@ class _BookingPageState extends State<BookingPage> {
                                 color: Colors.white70,
                               ),
                               Text(
-                                '  ${endDate}',
+                                '  $endDate',
                                 style: const TextStyle(
                                     color: Colors.white70,
                                     fontFamily: 'mont'),
@@ -429,6 +429,7 @@ class _BookingPageState extends State<BookingPage> {
                             if(value!.isEmpty){
                               return 'Field Must be Required !';
                             }
+                            return null;
                           },
                           cursorColor: Colors.blue,
                           style: const TextStyle(
@@ -441,24 +442,24 @@ class _BookingPageState extends State<BookingPage> {
                                   color: Colors.white70, fontFamily: 'mont'),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular((15)),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.white38,
                                 )),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular((15)),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.white54,
                                     width: 2,
                                 )),
                             focusedErrorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular((15)),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.white54,
                                   width: 2,
                                 )),
                             errorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular((15)),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.red,
                                 )),
                           ),
@@ -483,7 +484,7 @@ class _BookingPageState extends State<BookingPage> {
               Navigator.push(
                   context,
                   PageTransition(
-                      child: PaymentPage(),
+                      child: const PaymentPage(),
                       type: PageTransitionType
                           .fade));
               total = (cartList[bookingIndex]['price'] * people) * 10/100 + cartList[bookingIndex]['price'] * people;

@@ -4,7 +4,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:readmore/readmore.dart';
 import 'package:travel_app/utils/global.dart';
 
-import '../HomePage/homepage.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -14,6 +13,7 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  @override
   void initState(){
     print(showOptionImg.length);
     super.initState();
@@ -58,7 +58,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: height * 0.42,
                   width: width,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10),
                       ),
@@ -68,7 +68,7 @@ class _DetailPageState extends State<DetailPage> {
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.fromLTRB(16,19,16,10),
+                    padding: const EdgeInsets.fromLTRB(16,19,16,10),
                     child: SingleChildScrollView(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,7 +104,7 @@ class _DetailPageState extends State<DetailPage> {
                             children: [
                               Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.location_on,
                                     color: Colors.white,
                                   ),
@@ -120,7 +120,7 @@ class _DetailPageState extends State<DetailPage> {
                               ),
                               Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.star_half,
                                     color: Colors.yellow,
                                   ),

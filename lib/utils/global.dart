@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-Color bgColor = const Color(0xff22272c), blueColor = Color(0xff0076EE);
+Color bgColor = const Color(0xff22272c), blueColor = const Color(0xff0076EE);
 int selectedIndex = 0;
 List cartList = [];
 List foundUser = [], showOptionImg = [];
